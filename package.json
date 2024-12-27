@@ -1,0 +1,19 @@
+{
+  "name": "dsa-practice",
+  "version": "1.0.0",
+  "description": "Just for practicing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eDenxGT/DSA-Practice.git"
+  },
+  "author": "eDen or Aadil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eDenxGT/DSA-Practice/issues"
+  },
+  "homepage": "https://github.com/eDenxGT/DSA-Practice#readme"
+}
