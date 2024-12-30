@@ -151,4 +151,78 @@
 
 //! ================== Sorting Algorithms ================== !//
 
-const arr = [-3, 65, 7, 67, 32, 344, -2, 1, 12, 3, 32, 5, 6, 7, 8, 13];
+//* ====== Bubble Sorting ====== *//
+// const arr = [-3, 65, 7, 67, 32, 344, -2, 1, 12, 3, 32, 5, 6, 7, 8, 13];
+
+// const bubbleSort = () => {
+// 	let swapped;
+// 	do {
+// 		swapped = false;
+// 		for (let i = 0; i < arr.length - 1; i++) {
+// 			if (arr[i] > arr[i + 1]) {
+// 				let temp = arr[i];
+// 				arr[i] = arr[i + 1];
+// 				arr[i + 1] = temp;
+// 				swapped = true;
+// 			}
+// 		}
+// 	} while (swapped);
+// 	return arr;
+// };
+
+// console.log(bubbleSort(arr));
+
+//? Big O = O(n^2)
+
+//* ================================================= *//
+//! ================== Linked List ================== !//
+//* ================================================= *//
+
+class Node {
+	constructor(value) {
+		this.value = value;
+		this.next = null;
+	}
+}
+
+class LinkedList {
+	constructor() {
+		this.head = null;
+		this.size = 0;
+	}
+	isEmpty() {
+		return this.size === 0;
+	}
+	getSize() {
+		return this.size;
+	}
+	prepend(value) {
+		const node = new Node(value);
+		if (!this.isEmpty()) node.next = this.head;
+		this.head = node;
+		this.size++;
+	}
+	print() {
+		if (this.isEmpty()) {
+			console.log("List is Empty");
+		} else {
+			let curr = this.head;
+			let listValues = "";
+			while (curr) {
+				listValues += `${curr.value} `;
+				curr = curr.next;
+			}
+			console.log(listValues);
+		}
+	}
+}
+
+const list = new LinkedList();
+console.log(list.isEmpty());
+console.log(list.getSize());
+list.print()
+list.prepend(10);
+list.print()
+list.prepend(20);
+list.prepend(30);
+list.print()
