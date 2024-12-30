@@ -89,7 +89,7 @@
 
 //? Big O = O(n)
 
-//! ====== Search Algorithms ====== !//
+//! ================== Search Algorithms ================== !//
 
 //* ====== Linear Search ====== *//
 // const arr = [4, 3, 23, 4, 53, 5, 6];
@@ -104,24 +104,51 @@
 //? Big O = O(n)
 
 //* ====== Binary Search ====== *//
-// const arr = [-3, -2, 1, 3, 5, 6, 7, 8, 13];
+// const arr= [-3, -2, 1, 3, 5, 6, 7, 8, 13];
 
 // const findTargetElementUsingBinarySearch = (n) => {
 // 	let leftIndex = 0;
 // 	let rightIndex = arr.length - 1;
 // 	while (leftIndex <= rightIndex) {
-// 		let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
-// 		if (n === arr[middleIndex]) return middleIndex;
-// 		if (n < arr[middleIndex]) {
+// 		let middleIndex = Math.floor((rightIndex + leftIndex) / 2);
+// 		if (arr[middleIndex] === n) return middleIndex;
+// 		if (arr[middleIndex] > n) {
 // 			rightIndex = middleIndex - 1;
 // 		} else {
 // 			leftIndex = middleIndex + 1;
 // 		}
 // 	}
-// 	return -1;
+//    return -1;
 // };
 
-// console.log(findTargetElementUsingBinarySearch(11))
+// console.log(findTargetElementUsingBinarySearch(1));
 
 //? Big O = O(logn)
 
+//* ====== Recursive Binary Search ====== *//
+// const arr = [-3, -2, 1, 3, 5, 6, 7, 8, 13];
+
+// const search = (target, leftIndex, rightIndex) => {
+// 	if (leftIndex > rightIndex) return -1;
+// 	let middleIndex = Math.floor((rightIndex + leftIndex) / 2);
+
+// 	if (target === arr[middleIndex]) return middleIndex;
+// 	if (target > arr[middleIndex]) {
+// 		return search(target, middleIndex + 1, rightIndex);
+// 	} else {
+// 		return search(target, leftIndex, middleIndex - 1);
+// 	}
+
+// };
+
+// const recursiveBinarySearch = (n) => {
+// 	return search(n, 0, arr.length - 1);
+// };
+
+// console.log(recursiveBinarySearch(5));
+
+//? Big O = O(logn)
+
+//! ================== Sorting Algorithms ================== !//
+
+const arr = [-3, 65, 7, 67, 32, 344, -2, 1, 12, 3, 32, 5, 6, 7, 8, 13];
