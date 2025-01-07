@@ -11,6 +11,20 @@
 
 //? Big O = O(n)
 
+// const fibonacci = (n) => {
+// 	let fib = [0, 1];
+// 	for (let i = 2; i < n; i++) {
+// 		fib[i] = fib[i-1] + fib[i-2]
+// 	}
+// 	console.log(fib)
+// };
+// const fib = (n) =>{
+// 	if(n < 2) return n
+// 	return fib(n-1) + fib(n-2)
+// }
+
+// console.log(fib(6))
+
 //* ====== Factorial of a number ====== *//
 // const factorial = (n) => {
 // 	let fac = 1
@@ -21,6 +35,11 @@
 // };
 // console.log(factorial(4))
 
+// const factorial = (n) => {
+// 	if (n < 1) return 1;
+// 	return n * factorial(n - 1);
+// };
+// console.log(factorial(5))
 //? Big O = O(n)
 
 //* ====== Prime Number ====== *//
@@ -140,7 +159,6 @@
 // 	} else {
 // 		return search(target, leftIndex, middleIndex - 1);
 // 	}
-
 // };
 
 // const recursiveBinarySearch = (n) => {
@@ -154,25 +172,25 @@
 //! ================== Sorting Algorithms ================== !//
 
 //* ====== Bubble Sorting ====== *//
-// const arr = [-3, 65, 7, 67, 32, 344, -2, 1, 12, 3, 32, 5, 6, 7, 8, 13];
+const arr = [-3, 65, 7, 67, 32, 344, -2, 1, 12, 3, 32, 5, 6, 7, 8, 13];
 
-// const bubbleSort = () => {
-// 	let swapped;
-// 	do {
-// 		swapped = false;
-// 		for (let i = 0; i < arr.length - 1; i++) {
-// 			if (arr[i] > arr[i + 1]) {
-// 				let temp = arr[i];
-// 				arr[i] = arr[i + 1];
-// 				arr[i + 1] = temp;
-// 				swapped = true;
-// 			}
-// 		}
-// 	} while (swapped);
-// 	return arr;
-// };
+const bubbleSort = () => {
+	let swapped;
+	do {
+		swapped = false;
+		for (let i = 0; i < arr.length - 1; i++) {
+			if (arr[i] > arr[i + 1]) {
+				let temp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = temp;
+				swapped = true;
+			}
+		}
+	} while (swapped);
+	return arr;
+};
 
-// console.log(bubbleSort(arr));
+console.log(bubbleSort(arr));
 
 //? Big O = O(n^2)
 
@@ -441,3 +459,249 @@
 // console.log(list.removeFromFront())
 // list.print()
 // console.log("List Size ", list.getSize())
+
+//* ====== Array to LinkedList ====== *//
+
+// class ListNode {
+// 	constructor(val = 0, next = null) {
+// 		this.val = val;
+// 		this.next = next;
+// 	}
+// }
+
+// class LinkedList {
+// 	constructor() {
+// 		this.head = null;
+// 		this.size = 0;
+// 	}
+
+// 	arrayToLinkedList(arr) {
+// 		if (arr.length < 1) return null;
+// 		this.head = new ListNode(arr[0]);
+// 		let curr = this.head;
+// 		for (let i = 1; i < arr.length; i++) {
+// 			curr.next = new ListNode(arr[i]);
+// 			curr = curr.next;
+// 		}
+// 		this.size += arr.length;
+// 		return this.head;
+// 	}
+
+// 	addAtHead(val) {
+// 		const newNode = new ListNode(val);
+// 		if (!this.head) {
+// 			this.head = newNode;
+// 		} else {
+// 			newNode.next = this.head;
+// 			this.head = newNode;
+// 		}
+// 		this.size++;
+// 	}
+
+// 	addAtEnd(val) {
+// 		let newNode = new ListNode(val);
+// 		if (!this.head) {
+// 			this.head = newNode;
+// 		} else {
+// 			let curr = this.head;
+// 			while (curr && curr.next) {
+// 				curr = curr.next;
+// 			}
+// 			curr.next = newNode;
+// 		}
+// 		this.size++;
+// 	}
+
+// 	deleteNode(val) {
+// 		if (this.size === 0) return null;
+// 		if (this.head.val === val) {
+// 			this.head = this.head.next;
+// 		}
+// 		let curr = this.head;
+// 		while (curr && curr.next) {
+// 			if (curr.next.val === val) {
+// 				curr.next = curr.next.next;
+// 				this.size--;
+// 			} else {
+// 				curr = curr.next;
+// 			}
+// 		}
+// 	}
+
+// 	getSize() {
+// 		console.log(this.size);
+// 	}
+
+// 	print() {
+// 		if (this.size < 1) return null;
+// 		let curr = this.head;
+// 		let listValues = "";
+// 		while (curr) {
+// 			listValues += `${curr.val} -> `;
+// 			curr = curr.next;
+// 		}
+// 		console.log(listValues);
+// 	}
+
+// 	printReverse() {
+// 		let prev = null;
+//       let curr = this.head
+//       while(curr) {
+//          let next = curr.next
+//          curr.next = prev
+//          prev = curr
+//          curr = next
+//       }
+//       this.head = prev
+// 	}
+
+//    deleteDuplicates() {
+//       if(this.size === 0) return null
+//       let curr = this.head
+//       while(curr && curr.next) {
+//          if(curr.val === curr.next.val) {
+//             curr.next = curr.next.next
+//             this.size--
+//          } else {
+//             curr = curr.next
+//          }
+//       }
+//    }
+
+// }
+
+// const li = new LinkedList();
+// console.log(li.arrayToLinkedList([1, 1, 2, 3, 3, 4, 5, 6]));
+// li.addAtEnd(5);
+// li.addAtEnd(5);
+// // li.deleteNode(5);
+// // li.printReverse()
+// li.print();
+// li.getSize();
+// li.deleteDuplicates()
+// li.print();
+// li.getSize();
+
+// const arr = [3, 5, 8, 10, 14, 17, 21, 25, 28, 32];
+// const target = 5
+
+// function search(arr, leftIndex, rightIndex, val) {
+// 	if (leftIndex > rightIndex) return -1;
+// 	let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+// 	if (arr[middleIndex] === val) return middleIndex;
+// 	if (arr[middleIndex] > val) {
+// 		return search(arr, leftIndex, middleIndex - 1, val);
+// 	} else {
+// 		return search(arr, middleIndex + 1, rightIndex, val);
+// 	}
+// }
+
+// console.log(search(arr, 0, arr.length-1, target))
+
+// function find(arr, val) {
+// 	arr.sort((a, b) => a - b);
+// 	console.log(arr);
+// 	let leftIndex = 0;
+// 	let rightIndex = arr.length - 1;
+// 	while (leftIndex <= rightIndex) {
+// 		let middleIndex = Math.floor((rightIndex + leftIndex) / 2);
+// 		if (arr[middleIndex] === val) return middleIndex;
+// 		if (arr[middleIndex] > val) {
+// 			rightIndex = middleIndex - 1;
+// 		} else {
+// 			leftIndex = middleIndex + 1;
+// 		}
+// 	}
+// 	return -1;
+// }
+
+// console.log(find(arr, target));
+
+// const recursiveFibonacci = (n) => {
+// 	if (n < 2) return n;
+// 	return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+// };
+
+// console.log(recursiveFibonacci(6));
+
+// const recursiveFactorial = (n) => {
+// 	if (n === 0) return 1;
+// 	return n * recursiveFactorial(n - 1);
+// };
+
+// console.log(recursiveFactorial(5))
+
+// class LinkedNode {
+// 	constructor(val) {
+// 		this.val = val;
+// 		this.next = null;
+// 	}
+// }
+
+// class LinkedList {
+// 	constructor() {
+// 		this.head = null;
+// 		this.size = 0;
+// 	}
+// 	arrayToLinkedList(arr) {
+// 		this.head = new LinkedNode(arr[0]);
+// 		let curr = this.head;
+// 		for (let i = 1; i < arr.length; i++) {
+// 			curr.next = new LinkedNode(arr[i]);
+// 			curr = curr.next;
+// 		}
+// 		this.size = arr.length;
+// 	}
+// 	reverse() {
+// 		let prev = null;
+// 		let curr = this.head;
+// 		while (curr) {
+// 			let next = curr.next;
+// 			curr.next = prev;
+// 			prev = curr;
+// 			curr = next;
+// 		}
+// 		this.head = prev;
+// 	}
+
+// 	print() {
+// 		let curr = this.head;
+// 		let listValues = "";
+// 		while (curr) {
+// 			listValues += `${curr.val} => `;
+// 			curr = curr.next;
+// 		}
+// 		console.log(listValues);
+// 	}
+// }
+
+// const li = new LinkedList();
+// li.arrayToLinkedList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+// li.print();
+// li.reverse();
+// li.print();
+
+// const arr = [1, 2, 3, 4, 5, 7, 6];
+
+// const findKthlargest = (k) => {
+// 	let largest = 0;
+// 	let kthLargest = 0;
+// 	arr.sort((a, b) => b - a);
+
+// 	for (let i = 0; i < arr.length - 1; i++) {
+// 		if (i+1 === k) {
+// 				return arr[i];
+// 		}
+// 	}
+// };
+
+// console.log(findKthlargest(1))
+
+
+// const fibonacci = (val) => {
+// 	if(val< 2) return val
+// 	return fibonacci(val-1) + fibonacci(val-2)
+
+// }
+
+// console.log(fibonacci(6))
