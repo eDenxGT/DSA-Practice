@@ -172,25 +172,25 @@
 //! ================== Sorting Algorithms ================== !//
 
 //* ====== Bubble Sorting ====== *//
-const arr = [-3, 65, 7, 67, 32, 344, -2, 1, 12, 3, 32, 5, 6, 7, 8, 13];
+// const arr = [-3, 65, 7, 67, 32, 344, -2, 1, 12, 3, 32, 5, 6, 7, 8, 13];
 
-const bubbleSort = () => {
-	let swapped;
-	do {
-		swapped = false;
-		for (let i = 0; i < arr.length - 1; i++) {
-			if (arr[i] > arr[i + 1]) {
-				let temp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = temp;
-				swapped = true;
-			}
-		}
-	} while (swapped);
-	return arr;
-};
+// const bubbleSort = () => {
+// 	let swapped;
+// 	do {
+// 		swapped = false;
+// 		for (let i = 0; i < arr.length - 1; i++) {
+// 			if (arr[i] > arr[i + 1]) {
+// 				let temp = arr[i];
+// 				arr[i] = arr[i + 1];
+// 				arr[i + 1] = temp;
+// 				swapped = true;
+// 			}
+// 		}
+// 	} while (swapped);
+// 	return arr;
+// };
 
-console.log(bubbleSort(arr));
+// console.log(bubbleSort(arr));
 
 //? Big O = O(n^2)
 

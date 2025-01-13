@@ -3,10 +3,10 @@
 const arr = [2, 7, 4, 1, 5, 3];
 
 function bubbleSort(arr) {
-   let swapped = false;
+	let swapped = false;
 	do {
-      swapped = false
-		for (let i = 0; i < arr.length - 1; i++) {
+		swapped = false
+		for (let i = 0; i < arr.length; i++) {
 			if (arr[i] > arr[i + 1]) {
 				let temp = arr[i];
 				arr[i] = arr[i + 1];
@@ -15,7 +15,7 @@ function bubbleSort(arr) {
 			}
 		}
 	} while (swapped);
-   return arr
+	return arr;
 }
 
-console.log(bubbleSort(arr))
+console.log(bubbleSort(arr));

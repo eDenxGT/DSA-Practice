@@ -7,6 +7,12 @@
   "scripts": {
     "sel": "nodemon DSA_2/Sorting_Algorithms/SelectionSort.js",
     "bub": "nodemon DSA_2/Sorting_Algorithms/BubbleSort.js",
+    "ins": "nodemon DSA_2/Sorting_Algorithms/InsertionSort.js",
+    "mer": "nodemon DSA_2/Sorting_Algorithms/MergeSort.js",
+    "qui": "nodemon DSA_2/Sorting_Algorithms/QuickSort.js",
+    "que": "nodemon DSA_2/Queue/Queue.js",
+    "htb": "nodemon DSA_2/Hash_Table/Hash_Table.js",
+    "stk": "nodemon DSA_2/Stack/Stack.js",
     "dsa1": "nodemon DSA_1/index.js"
   },
   "repository": {

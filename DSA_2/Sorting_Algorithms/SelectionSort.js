@@ -3,8 +3,8 @@
 const arr = [2, 7, 4, 1, 5, 3];
 
 function selectionSort(arr) {
-	for (let i = 0; i < arr.length - 1; i++) {
-		for (let j = i + 1; j <= arr.length - 1; j++) {
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = i; j < arr.length; j++) {
 			if (arr[i] > arr[j]) {
 				let temp = arr[i];
 				arr[i] = arr[j];
@@ -12,7 +12,6 @@ function selectionSort(arr) {
 			}
 		}
 	}
-   return arr
+	return arr;
 }
-
-console.log(selectionSort(arr))
+console.log(selectionSort(arr));
