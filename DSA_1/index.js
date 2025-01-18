@@ -697,7 +697,6 @@
 
 // console.log(findKthlargest(1))
 
-
 // const fibonacci = (val) => {
 // 	if(val< 2) return val
 // 	return fibonacci(val-1) + fibonacci(val-2)
@@ -705,3 +704,115 @@
 // }
 
 // console.log(fibonacci(6))
+
+// function mergeSort(str) {
+//    if(str.length < 2) return str
+// 	const mid = Math.floor(str.length / 2);
+// 	const left = str.slice(0, mid);
+// 	const right = str.slice(mid);
+
+// 	const sortedLeft = mergeSort(left);
+// 	const sortedRight = mergeSort(right);
+
+// 	return merge(sortedLeft, sortedRight);
+// }
+
+// function merge(left, right) {
+// 	let sorted = "";
+// 	let i = 0,
+// 		j = 0;
+//    while(i < left.length && j < right.length) {
+//       if(left.charCodeAt(i)> right.charCodeAt(j)) {
+//          sorted += right[j]
+//          j++
+//       } else {
+//          sorted += left[i]
+//          i++
+//       }
+//    }
+//    while(i<left.length) {
+//       sorted += left[i]
+//       i++
+//    }
+//    while(j< right.length) {
+//       sorted += right[j]
+//       j++
+//    }
+
+//    return sorted
+// }
+
+// console.log(mergeSort("cdab"))
+
+// class Stack {
+// 	constructor() {
+// 		this.stack = [];
+// 		this.size = 0;
+// 	}
+// 	addToStack(str) {
+// 		for (let i = 0; i < str.length; i++) {
+// 			this.stack.push(str[i]);
+// 		}
+// 		this.size += str.length;
+// 	}
+// 	isPalindrome() {
+// 		let reversed = "";
+// 		let original = this.stack.join("");
+// 		while( this.stack.length) {
+// 			reversed += this.stack.shift();
+// 		}
+// 		console.log(original, reversed);
+// 		if (original === reversed) {
+// 			console.log(original, "is a palindrome");
+// 		} else {
+// 			console.log("is not a palindrome");
+// 		}
+// 	}
+// }
+// const stack = new Stack();
+
+// stack.addToStack("malayalam");
+// stack.isPalindrome();
+
+
+// class Queue {
+//    constructor() {
+//       this.queue1 = []
+//       this.queue2 = []
+//    }
+//    enqueue(val) {
+//       this.queue1.unshift(val)
+//    }
+//    dequeue() {
+//       if(this.queue2.length === 0) {
+//          while(this.queue1.length) {
+//             this.queue2.push(this.queue1.shift())
+//          }
+//       }
+
+//       return this.queue2.shift()
+//    }
+// }
+
+// const queue = new Queue() 
+
+// queue.enqueue(4)
+// queue.enqueue(5)
+// queue.enqueue(6)
+// console.log(queue.dequeue())
+
+// hash(key) {
+//    let total = 0
+//    for(let i = 0; i< key.length; i++) {
+//       total += key.charCodeAt(i)
+//    }
+//    return total % tableSize
+// }
+
+// set(key, val) {
+//    const index = hash(key) 
+//    while(table[index] !== undefined && table[index][0] !== key) {
+//       index = (index +1 ) % tableSize
+//    }
+//    table[index] = [key, val]
+// } 

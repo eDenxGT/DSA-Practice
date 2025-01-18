@@ -1,34 +1,34 @@
 //! ================== Queue ================== !//
-class Queue {
-   constructor() {
-      this.items= []
-   }
-   enqueue(element) {
-      this.items.push(element)
-   }
-   dequeue() {
-      if(this.items.length === 0) return "Queue is empty"
-      return this.items.shift()
-   }
-   peek() {
-      if(this.items.length === 0) return "Queue is empty"
-      return this.items[0]
-   }
-   display() {
-      console.log(this.items.toString())
-   }
+// class Queue {
+//    constructor() {
+//       this.items= []
+//    }
+//    enqueue(element) {
+//       this.items.push(element)
+//    }
+//    dequeue() {
+//       if(this.items.length === 0) return "Queue is empty"
+//       return this.items.shift()
+//    }
+//    peek() {
+//       if(this.items.length === 0) return "Queue is empty"
+//       return this.items[0]
+//    }
+//    display() {
+//       console.log(this.items.toString())
+//    }
 
-}
+// }
 
-const queue = new Queue()
-queue.enqueue(4)
-queue.enqueue(5)
-queue.enqueue(6)
-queue.enqueue(7)
-console.log("Peek value",queue.peek())
-queue.display()
-console.log( "Dequeued ",queue.dequeue())
-queue.display()
+// const queue = new Queue()
+// queue.enqueue(4)
+// queue.enqueue(5)
+// queue.enqueue(6)
+// queue.enqueue(7)
+// console.log("Peek value",queue.peek())
+// queue.display()
+// console.log( "Dequeued ",queue.dequeue())
+// queue.display()0-
 
 // class Queue {
 // 	constructor() {
@@ -109,17 +109,58 @@ queue.display()
 // 	}
 // }
 
-// const cq = new CircularQueue(5)
-// cq.enqueue(4)
-// cq.enqueue(5)
-// cq.enqueue(6)
-// cq.enqueue(7)
-// cq.enqueue(6)
-// cq.enqueue(8)
-// cq.display()
-// cq.dequeue()
-// cq.enqueue(8)
-// cq.display()
+// class CircularQueue {
+// 	constructor(size) {
+// 		this.queue = new Array(size);
+// 		this.size = size;
+// 		this.currentLength = 0;
+// 		this.front = -1;
+// 		this.rear = -1;
+// 	}
+// 	isFull() {
+// 		return this.currentLength === this.size;
+// 	}
+// 	isEmpty() {
+// 		return this.currentLength === 0;
+// 	}
+// 	enqueue(val) {
+// 		if (this.isFull()) return console.log("Queue is Full!");
+// 		if (this.front === -1) this.front = 0;
+// 		this.rear = (this.rear + 1) % this.size;
+// 		this.queue[this.rear] = val;
+// 		this.currentLength++;
+// 	}
+// 	dequeue() {
+// 		if (this.isEmpty()) return console.log("Queue is empty");
+// 		this.queue[this.front] = undefined;
+// 		this.front = (this.front + 1) % this.size;
+// 		this.currentLength--;
+// 		if (this.isEmpty()) {
+// 			this.front = -1;
+// 			this.rear = -1;
+// 		}
+// 	}
+// 	display() {
+// 		let res = "";
+// 		let i = this.front;
+// 		while (true) {
+// 			res += `${this.queue[i]} => `;
+// 			i = (i + 1) % this.size;
+// 			if (i === this.rear) break;
+// 		}
+// 		console.log(res);
+// 	}
+// }
+// const cq = new CircularQueue(5);
+// cq.enqueue(4);
+// cq.enqueue(5);
+// cq.enqueue(6);
+// cq.enqueue(7);
+// cq.enqueue(6);
+// cq.dequeue();
+// cq.display();
+// cq.dequeue();
+// cq.display();
 
 //! ================== Priority Queue ================== !//
 // class PriorityQueue {
@@ -154,13 +195,38 @@ queue.display()
 //    }
 // }
 
-// const pq = new PriorityQueue()
-// pq.enqueue("Task a", 4)
-// pq.enqueue("Task b", 3)
-// pq.enqueue("Task c", 1)
-// pq.enqueue("Task d", 2)
-// pq.dequeue()
-// pq.display()
+// class PriorityQueue {
+// 	constructor() {
+// 		this.queue = [];
+// 	}
+// 	enqueue(val, priority) {
+// 		const newNode = { val, priority };
+// 		if (this.queue.length !== 0) {
+// 			for (let i = 0; i < this.queue.length; i++) {
+// 				if (this.queue[i].priority > priority) {
+// 					this.queue.splice(i, 0, newNode);
+// 					break;
+// 				}
+// 			}
+// 		} else {
+// 			this.queue.push(newNode);
+// 		}
+// 	}
+// 	dequeue() {
+// 		this.queue.shift();
+// 	}
+// 	display() {
+// 		console.log(this.queue);
+// 	}
+// }
+
+// const pq = new PriorityQueue();
+// pq.enqueue("Task a", 4);
+// pq.enqueue("Task b", 3);
+// pq.enqueue("Task c", 1);
+// pq.enqueue("Task d", 2);
+// pq.dequeue();
+// pq.display();
 
 //! ================== Double Ended Queue ================== !//
 
@@ -187,14 +253,35 @@ queue.display()
 //    }
 // }
 
-// const deque = new DoubleEndedQueue()
+// class DoubleEndedQueue {
+// 	constructor() {
+// 		this.queue = [];
+// 	}
+// 	addToFront(val) {
+// 		this.queue.unshift(val)
+// 	}
+// 	addToRear(val) {
+// 		this.queue.push(val)
+// 	}
+// 	removeFromFront() {
+// 		this.queue.shift()
+// 	}
+// 	removeFromRear() {
+// 		this.queue.pop()
+// 	}
+// 	display() {
+// 		console.log(this.queue)
+// 	}
+// }
 
-// deque.addToFront(3)
-// deque.addToFront(1)
-// deque.addToFront(2)
-// deque.addToRear(4)
-// deque.addToRear(5)
-// deque.addToRear(2)
-// deque.removeFromFront()
-// deque.removeFromRear()
-// deque.display()
+// const deque = new DoubleEndedQueue();
+
+// deque.addToFront(3);
+// deque.addToFront(1);
+// deque.addToFront(2);
+// deque.addToRear(4);
+// deque.addToRear(5);
+// deque.addToRear(2);
+// deque.removeFromFront();
+// deque.removeFromRear();
+// deque.display();

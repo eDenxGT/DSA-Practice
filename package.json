@@ -13,6 +13,9 @@
     "que": "nodemon DSA_2/Queue/Queue.js",
     "htb": "nodemon DSA_2/Hash_Table/Hash_Table.js",
     "stk": "nodemon DSA_2/Stack/Stack.js",
+    "bst": "nodemon DSA_3/Tree/BST.js",
+    "min": "nodemon DSA_3/Heap/MinHeap.js",
+    "max": "nodemon DSA_3/Heap/MaxHeap.js",
     "dsa1": "nodemon DSA_1/index.js"
   },
   "repository": {
