@@ -16,6 +16,9 @@
     "bst": "nodemon DSA_3/Tree/BST.js",
     "min": "nodemon DSA_3/Heap/MinHeap.js",
     "max": "nodemon DSA_3/Heap/MaxHeap.js",
+    "tri": "nodemon DSA_3/Trie/Trie.js",
+    "gra": "nodemon DSA_3/Graph/Graph.js",
+    "dsa3": "nodemon DSA_3/dsa3.js",
     "dsa1": "nodemon DSA_1/index.js"
   },
   "repository": {

@@ -26,16 +26,10 @@ class MaxHeap {
 		const left = this.leftChild(i);
 		const right = this.rightChild(i);
 		let largest = i;
-		while (
-			left < this.heap.length &&
-			this.heap[left] > this.heap[largest]
-		) {
+		if (left < this.heap.length && this.heap[left] > this.heap[largest]) {
 			largest = left;
 		}
-		while (
-			right < this.heap.length &&
-			this.heap[right] > this.heap[largest]
-		) {
+		if (right < this.heap.length && this.heap[right] > this.heap[largest]) {
 			largest = right;
 		}
 		if (largest !== i) {
@@ -50,10 +44,10 @@ class MaxHeap {
 	remove() {
 		if (this.heap.length === 0) return null;
 		if (this.heap.length === 1) return this.heap.pop();
-		const root = this.heap[0]
+		const root = this.heap[0];
 		this.heap[0] = this.heap.pop();
 		this.heapifyDown(0);
-      return root
+		return root;
 	}
 	heapSort(arr) {
 		const maxHeap = new MaxHeap();
@@ -62,9 +56,9 @@ class MaxHeap {
 			maxHeap.insert(val);
 		}
 		while (maxHeap.heap.length > 0) {
-         sorted.push(maxHeap.remove())
-      }
-      return sorted
+			sorted.push(maxHeap.remove());
+		}
+		return sorted;
 	}
 	printHeap() {
 		console.log("HEAP", this.heap);
@@ -80,5 +74,5 @@ max.insert(4);
 max.insert(5);
 max.remove();
 max.printHeap();
-const arr = [6,5,34,12,7,3,98]
-console.log("Heap Sort", max.heapSort(max.heap))
+const arr = [6, 5, 34, 12, 7, 3, 98];
+console.log("Heap Sort", max.heapSort(max.heap));
